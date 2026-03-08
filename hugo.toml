@@ -1,4 +1,4 @@
-baseURL = "https://jamyoung.pages.dev"
+baseURL = "https://hugo-jam.pages.dev/"
 title = "Jamyoung's Blog"
 theme = "hugo-coder"
 languageCode = "zh-cn"

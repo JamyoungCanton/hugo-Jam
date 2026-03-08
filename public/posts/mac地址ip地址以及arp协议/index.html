@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+   · Jamyoung&#39;s Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Jamyoung">
+<meta name="description" content="![[image-20201014222831663.png]]
+
+
+  title: &ldquo;数据链路层&rdquo;
+date: 2026-03-08
+draft: false
+tags: [&ldquo;网络&rdquo;]
+categories: [&ldquo;技术&rdquo;]
+  
+    
+    链接到标题
+  
+
+
+  MAC地址
+  
+    
+    链接到标题
+  
+
+
+
+使用点对点信道的数据链路层不需要使用地址
+使用广播信道的数据链路层必须使用地址来区分各主机
+
+
+![[image-20201014223659993.png]]
+
+  广播信道的数据链路层必须使用地址（MAC）
+  
+    
+    链接到标题
+  
+
+![[image-20201014224732019.png]]
+
+MAC地址又称为硬件地址或物理地址。请注意：不要被 “物理” 二字误导认为物理地址属于物理层范畴，物理地址属于数据链路层范畴
+
+
+  IEEE 802局域网的MAC地址格式
+  
+    
+    链接到标题
+  
+
+![[image-20201014225358570.png]]
+
+组织唯一标识符OUI
+
+生产网络设备的厂商，需要向IEEE的注册管理机构申请一个或多个OUI
+
+网络接口标识符
+
+由获得OUI的厂商自行随意分配
+
+EUI-48
+
+48是这个MAC地址的位数
+
+
+![[image-20201014230248959.png]]
+
+对于使用EUI-48空间的应用程序，IEEE的目标寿命为100年（直到2080年），但是鼓励采用EUI-64作为替代
+
+关于无效的 MAC 帧
+
+数据字段的长度与长度字段的值不一致；
+帧的长度不是整数个字节；
+用收到的帧检验序列 FCS 查出有差错；
+数据字段的长度不在 46 ~ 1500 字节之间。
+有效的 MAC 帧长度为 64 ~ 1518 字节之间。
+
+
+对于检查出的无效 MAC 帧就简单地丢弃。以太网不负责重传丢弃的帧。">
+<meta name="keywords" content="blog,frontend,vue,uniapp,agent">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jamyoung&#39;s Blog">
+  <meta name="twitter:description" content="![[image-20201014222831663.png]]
+title: “数据链路层” date: 2026-03-08 draft: false tags: [“网络”] categories: [“技术”]链接到标题MAC地址链接到标题使用点对点信道的数据链路层不需要使用地址 使用广播信道的数据链路层必须使用地址来区分各主机 ![[image-20201014223659993.png]]
+广播信道的数据链路层必须使用地址（MAC）链接到标题![[image-20201014224732019.png]]
+MAC地址又称为硬件地址或物理地址。请注意：不要被 “物理” 二字误导认为物理地址属于物理层范畴，物理地址属于数据链路层范畴
+IEEE 802局域网的MAC地址格式链接到标题![[image-20201014225358570.png]]
+组织唯一标识符OUI
+生产网络设备的厂商，需要向IEEE的注册管理机构申请一个或多个OUI 网络接口标识符
+由获得OUI的厂商自行随意分配 EUI-48
+48是这个MAC地址的位数 ![[image-20201014230248959.png]]
+对于使用EUI-48空间的应用程序，IEEE的目标寿命为100年（直到2080年），但是鼓励采用EUI-64作为替代
+关于无效的 MAC 帧
+数据字段的长度与长度字段的值不一致； 帧的长度不是整数个字节； 用收到的帧检验序列 FCS 查出有差错； 数据字段的长度不在 46 ~ 1500 字节之间。 有效的 MAC 帧长度为 64 ~ 1518 字节之间。 对于检查出的无效 MAC 帧就简单地丢弃。以太网不负责重传丢弃的帧。">
+
+<meta property="og:url" content="http://localhost:1313/posts/mac%E5%9C%B0%E5%9D%80ip%E5%9C%B0%E5%9D%80%E4%BB%A5%E5%8F%8Aarp%E5%8D%8F%E8%AE%AE/">
+  <meta property="og:site_name" content="Jamyoung&#39;s Blog">
+  <meta property="og:title" content="Jamyoung&#39;s Blog">
+  <meta property="og:description" content="![[image-20201014222831663.png]]
+title: “数据链路层” date: 2026-03-08 draft: false tags: [“网络”] categories: [“技术”]链接到标题MAC地址链接到标题使用点对点信道的数据链路层不需要使用地址 使用广播信道的数据链路层必须使用地址来区分各主机 ![[image-20201014223659993.png]]
+广播信道的数据链路层必须使用地址（MAC）链接到标题![[image-20201014224732019.png]]
+MAC地址又称为硬件地址或物理地址。请注意：不要被 “物理” 二字误导认为物理地址属于物理层范畴，物理地址属于数据链路层范畴
+IEEE 802局域网的MAC地址格式链接到标题![[image-20201014225358570.png]]
+组织唯一标识符OUI
+生产网络设备的厂商，需要向IEEE的注册管理机构申请一个或多个OUI 网络接口标识符
+由获得OUI的厂商自行随意分配 EUI-48
+48是这个MAC地址的位数 ![[image-20201014230248959.png]]
+对于使用EUI-48空间的应用程序，IEEE的目标寿命为100年（直到2080年），但是鼓励采用EUI-64作为替代
+关于无效的 MAC 帧
+数据字段的长度与长度字段的值不一致； 帧的长度不是整数个字节； 用收到的帧检验序列 FCS 查出有差错； 数据字段的长度不在 46 ~ 1500 字节之间。 有效的 MAC 帧长度为 64 ~ 1518 字节之间。 对于检查出的无效 MAC 帧就简单地丢弃。以太网不负责重传丢弃的帧。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/mac%E5%9C%B0%E5%9D%80ip%E5%9C%B0%E5%9D%80%E4%BB%A5%E5%8F%8Aarp%E5%8D%8F%E8%AE%AE/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Jamyoung&#39;s Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/mac%E5%9C%B0%E5%9D%80ip%E5%9C%B0%E5%9D%80%E4%BB%A5%E5%8F%8Aarp%E5%8D%8F%E8%AE%AE/">
+              
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="0001-01-01T00:00:00Z">
+                0001-01-01
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：1 分钟
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <p>![[image-20201014222831663.png]]</p>
+<hr>
+<h2 id="categories-技术">
+  title: &ldquo;数据链路层&rdquo;
+date: 2026-03-08
+draft: false
+tags: [&ldquo;网络&rdquo;]
+categories: [&ldquo;技术&rdquo;]
+  <a class="heading-link" href="#categories-%e6%8a%80%e6%9c%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="mac地址">
+  MAC地址
+  <a class="heading-link" href="#mac%e5%9c%b0%e5%9d%80">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<blockquote>
+<ul>
+<li>使用点对点信道的数据链路层不需要使用地址</li>
+<li>使用广播信道的数据链路层必须使用地址来区分各主机</li>
+</ul>
+</blockquote>
+<p>![[image-20201014223659993.png]]</p>
+<h4 id="广播信道的数据链路层必须使用地址mac">
+  广播信道的数据链路层必须使用地址（MAC）
+  <a class="heading-link" href="#%e5%b9%bf%e6%92%ad%e4%bf%a1%e9%81%93%e7%9a%84%e6%95%b0%e6%8d%ae%e9%93%be%e8%b7%af%e5%b1%82%e5%bf%85%e9%a1%bb%e4%bd%bf%e7%94%a8%e5%9c%b0%e5%9d%80mac">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201014224732019.png]]</p>
+<blockquote>
+<p><strong>MAC地址又称为硬件地址或物理地址</strong>。<strong>请注意：不要被 “物理” 二字误导认为物理地址属于物理层范畴，物理地址属于数据链路层范畴</strong></p>
+</blockquote>
+<h4 id="ieee-802局域网的mac地址格式">
+  IEEE 802局域网的MAC地址格式
+  <a class="heading-link" href="#ieee-802%e5%b1%80%e5%9f%9f%e7%bd%91%e7%9a%84mac%e5%9c%b0%e5%9d%80%e6%a0%bc%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201014225358570.png]]</p>
+<blockquote>
+<p><strong>组织唯一标识符OUI</strong></p>
+<ul>
+<li>生产网络设备的厂商，需要向IEEE的注册管理机构申请一个或多个OUI</li>
+</ul>
+<p><strong>网络接口标识符</strong></p>
+<ul>
+<li>由获得OUI的厂商自行随意分配</li>
+</ul>
+<p><strong>EUI-48</strong></p>
+<ul>
+<li>48是这个MAC地址的位数</li>
+</ul>
+</blockquote>
+<p>![[image-20201014230248959.png]]</p>
+<blockquote>
+<p>对于使用EUI-48空间的应用程序，IEEE的目标寿命为100年（直到2080年），但是鼓励采用EUI-64作为替代</p>
+</blockquote>
+<p><strong>关于无效的 MAC 帧</strong></p>
+<ul>
+<li>数据字段的长度与长度字段的值不一致；</li>
+<li>帧的长度不是整数个字节；</li>
+<li>用收到的帧检验序列 FCS 查出有差错；</li>
+<li>数据字段的长度不在 46 ~ 1500 字节之间。</li>
+<li>有效的 MAC 帧长度为 64 ~ 1518 字节之间。</li>
+</ul>
+<blockquote>
+<p><strong>对于检查出的无效</strong> <strong>MAC</strong> <strong>帧就简单地丢弃。以太网不负责重传丢弃的帧。</strong></p>
+</blockquote>
+<h4 id="ieee-802局域网的mac地址发送顺序">
+  IEEE 802局域网的MAC地址发送顺序
+  <a class="heading-link" href="#ieee-802%e5%b1%80%e5%9f%9f%e7%bd%91%e7%9a%84mac%e5%9c%b0%e5%9d%80%e5%8f%91%e9%80%81%e9%a1%ba%e5%ba%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201014230625182.png]]</p>
+<h4 id="单播mac地址举例">
+  单播MAC地址举例
+  <a class="heading-link" href="#%e5%8d%95%e6%92%admac%e5%9c%b0%e5%9d%80%e4%b8%be%e4%be%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201014230822305.png]]</p>
+<blockquote>
+<p>主机B给主机C发送<strong>单播帧</strong>，主机B首先要构建该<strong>单播帧</strong>，<strong>在帧首部中的目的地址字段填入主机C的MAC地址</strong>，源地址字段填入自己的MAC地址，再加上帧首部的其他字段、数据载荷以及帧尾部，就构成了该<strong>单播帧</strong></p>
+</blockquote>
+<p>![[image-20201014231244655.png]]</p>
+<blockquote>
+<p>主机B将该<strong>单播帧</strong>发送出去，主机A和C都会收到该<strong>单播帧</strong></p>
+<p>主机A的网卡发现该<strong>单播帧</strong>的目的MAC地址与自己的MAC地址不匹配，丢弃该帧</p>
+<p>主机C的网卡发现该<strong>单播帧</strong>的目的MAC地址与自己的MAC地址匹配，接受该帧</p>
+<p>并将该帧交给其上层处理</p>
+</blockquote>
+<h4 id="广播mac地址举例">
+  广播MAC地址举例
+  <a class="heading-link" href="#%e5%b9%bf%e6%92%admac%e5%9c%b0%e5%9d%80%e4%b8%be%e4%be%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201014231754669.png]]</p>
+<blockquote>
+<p>假设主机B要发送一个<strong>广播帧</strong>，主机B首先要构建该<strong>广播帧</strong>，<strong>在帧首部中的目的地址字段填入广播地址</strong>，也就是十六进制的全F，源地址字段填入自己的MAC地址，再加上帧首部中的其他字段、数据载荷以及帧尾部，就构成了该<strong>广播帧</strong></p>
+</blockquote>
+<p>![[image-20201014232132424.png]]</p>
+<blockquote>
+<p>主机B讲该<strong>广播帧</strong>发送出去，主机A和C都会收到该<strong>广播帧</strong>，<strong>发现该帧首部中的目的地址字段的内容是广播地址</strong>，就知道该帧是<strong>广播帧</strong>，主机A和主机C都接受该帧，并将该帧交给上层处理</p>
+</blockquote>
+<h4 id="多播mac地址举例">
+  多播MAC地址举例
+  <a class="heading-link" href="#%e5%a4%9a%e6%92%admac%e5%9c%b0%e5%9d%80%e4%b8%be%e4%be%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201014232714791.png]]</p>
+<blockquote>
+<p>假设主机A要发送<strong>多播帧</strong>给该<strong>多播地址</strong>。将该<strong>多播地址</strong>的左起第一个字节写成8个比特，第一个字节的最低比特位是1，这就表明该地址是<strong>多播地址</strong>。</p>
+<p>快速判断地址是不是<strong>多播地址</strong>，就是上图所示箭头所指的第十六进制数不能整除2（1,3,5,7,9,B,D,F），则该地址是<strong>多播地址</strong></p>
+<p>假设主机B，C和D支持多播，各用户给自己的主机配置多播组列表<strong>如下所示</strong></p>
+</blockquote>
+<p>![[image-20201015001243584.png]]</p>
+<blockquote>
+<p>主机B属于两个多播组，主机C也属于两个多播组，而主机D不属于任何多播组</p>
+</blockquote>
+<p>![[image-20201015001535528.png]]</p>
+<blockquote>
+<p>主机A首先要构建该<strong>多播帧</strong>，<strong>在帧首部中的目的地址字段填入该多播地址</strong>，源地址点填入自己的MAC地址，再加上帧首部中的其他字段、数据载荷以及帧尾部，就构成了该<strong>多播帧</strong></p>
+</blockquote>
+<p>![[image-20201015002054876.png]]</p>
+<blockquote>
+<p>主机A将该<strong>多播帧</strong>发送出去，主机B、C、D都会收到该<strong>多播帧</strong></p>
+<p><strong>主机B和C发现该多播帧的目的MAC地址在自己的多播组列表中</strong>，主机B和C都会接受该帧</p>
+<p>主机D发现该<strong>多播帧</strong>的目的MAC地址不在自己得多播组列表中，则丢弃该<strong>多播帧</strong></p>
+</blockquote>
+<blockquote>
+<p>给主机配置多播组列表进行私有应用时，不得使用公有的标准多播地址</p>
+</blockquote>
+<h3 id="ip地址">
+  IP地址
+  <a class="heading-link" href="#ip%e5%9c%b0%e5%9d%80">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>IP地址属于网络层的范畴，不属于数据链路层的范畴</p>
+<p>下面内容讲的是IP地址的使用，详细的IP地址内容在网络层中介绍</p>
+<h4 id="基本概念">
+  基本概念
+  <a class="heading-link" href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201015104441580.png]]</p>
+<p><strong>注意：在一个IP地址中，哪一部分是网络编号，哪一部分是主机编号并不都相同</strong></p>
+<h4 id="从网络体系结构看ip地址与mac地址">
+  从网络体系结构看IP地址与MAC地址
+  <a class="heading-link" href="#%e4%bb%8e%e7%bd%91%e7%bb%9c%e4%bd%93%e7%b3%bb%e7%bb%93%e6%9e%84%e7%9c%8bip%e5%9c%b0%e5%9d%80%e4%b8%8emac%e5%9c%b0%e5%9d%80">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201015104913755.png]]</p>
+<p>注：接收层无需看懂上一层传过来的协议数据单元，只需加入当前层的首部（和尾部）标识即可传输给下一层</p>
+<h4 id="数据包转发过程中ip地址与mac地址的变化情况">
+  数据包转发过程中IP地址与MAC地址的变化情况
+  <a class="heading-link" href="#%e6%95%b0%e6%8d%ae%e5%8c%85%e8%bd%ac%e5%8f%91%e8%bf%87%e7%a8%8b%e4%b8%adip%e5%9c%b0%e5%9d%80%e4%b8%8emac%e5%9c%b0%e5%9d%80%e7%9a%84%e5%8f%98%e5%8c%96%e6%83%85%e5%86%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>图上各主机和路由器各接口的IP地址和MAC地址用简单的标识符来表示</p>
+<p>![[image-20201015105455043.png]]</p>
+<p>![[image-20210103212224961.png]]</p>
+<blockquote>
+<p>如何从IP地址找出其对应的MAC地址？</p>
+<p>ARP协议</p>
+</blockquote>
+<h3 id="arp协议">
+  ARP协议
+  <a class="heading-link" href="#arp%e5%8d%8f%e8%ae%ae">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>如何从IP地址找出其对应的MAC地址？</p>
+<p>ARP（地址解析协议）</p>
+<h4 id="流程">
+  流程
+  <a class="heading-link" href="#%e6%b5%81%e7%a8%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201015113826197.png]]</p>
+<p>ARP高速缓存表</p>
+<p>![[image-20201015114052206.png]]</p>
+<blockquote>
+<p>当主机B要给主机C发送数据包时，会首先在自己的ARP高速缓存表中查找主机C的IP地址所对应的MAC地址，但未找到，因此，主机B需要发送ARP请求报文，来获取主机C的MAC地址</p>
+</blockquote>
+<p>![[image-20201015114444263.png]]</p>
+<blockquote>
+<p>ARP请求报文有具体的格式，上图的只是简单描述</p>
+<p>ARP请求报文被封装在MAC帧中发送，目的地址为广播地址</p>
+<p>主机B发送封装有ARP请求报文的广播帧，总线上的其他主机都能收到该广播帧</p>
+</blockquote>
+<p>![[image-20201015114811501.png]]</p>
+<blockquote>
+<p>收到ARP请求报文的主机A和主机C会把ARP请求报文交给上层的ARP进程</p>
+<p>主机A发现所询问的IP地址不是自己的IP地址，因此不用理会</p>
+<p>主机C的发现所询问的IP地址是自己的IP地址，需要进行响应</p>
+</blockquote>
+<p>![[image-20201015115212170.png]]</p>
+<p>![[image-20201015115236673.png]]</p>
+<p>![[image-20201015115252972.png]]</p>
+<p>动态与静态的区别</p>
+<p>![[image-20201015115831543.png]]</p>
+<p><strong>ARP协议只能在一段链路或一个网络上使用，而不能跨网络使用</strong></p>
+<p>![[image-20201015120108028.png]]</p>
+<blockquote>
+<p>上图ARP协议的使用是逐段链路进行的</p>
+</blockquote>
+<h4 id="总结">
+  总结
+  <a class="heading-link" href="#%e6%80%bb%e7%bb%93">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>![[image-20201015120707150.png]]</p>
+<blockquote>
+<p>ARP表中的IP地址与MAC地址的对应关系记录，是<strong>会定期自动删除的</strong>，<strong>因为IP地址与MAC地址的对应关系不是永久性的</strong></p>
+</blockquote>
+<h3 id="mac地址ip地址以及arp协议习题">
+  MAC地址、IP地址以及ARP协议习题
+  <a class="heading-link" href="#mac%e5%9c%b0%e5%9d%80ip%e5%9c%b0%e5%9d%80%e4%bb%a5%e5%8f%8aarp%e5%8d%8f%e8%ae%ae%e4%b9%a0%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>![[image-20201015110420372.png]]</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     Jamyoung 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
