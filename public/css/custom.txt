@@ -1,0 +1,82 @@
+/* 文章列表页整体宽度 */
+.list .container,
+.posts .container,
+.content .container {
+  max-width: 860px;
+}
+
+/* 页面标题 */
+.list .title,
+.posts .title,
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+/* 文章列表区域 */
+ul.posts,
+.posts-list {
+  margin-top: 1.5rem;
+  padding: 0;
+}
+
+/* 每篇文章项 */
+ul.posts li,
+.posts-list li {
+  list-style: none;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  background: #f8f9fb;
+  transition: all 0.2s ease;
+}
+
+/* 鼠标悬停 */
+ul.posts li:hover,
+.posts-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+/* 日期 */
+ul.posts li span,
+ul.posts li time,
+.posts-list .date {
+  color: #666;
+  font-size: 0.95rem;
+  margin-right: 1.2rem;
+  min-width: 110px;
+  display: inline-block;
+}
+
+/* 文章标题链接 */
+ul.posts li a,
+.posts-list a {
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* 悬停时标题颜色变化 */
+ul.posts li a:hover,
+.posts-list a:hover {
+  color: #2f6feb;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  ul.posts li,
+  .posts-list li {
+    padding: 0.9rem 1rem;
+  }
+
+  ul.posts li span,
+  ul.posts li time,
+  .posts-list .date {
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+}
