@@ -1,73 +1,309 @@
-/* 文章列表页整体宽度 */
-.list .container,
-.posts .container,
-.content .container {
-  max-width: 860px;
+/* =========
+   全局基础
+========= */
+:root {
+  --main-width: 860px;
+  --card-bg: #f8fafc;
+  --card-hover-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-soft: #6b7280;
+  --text-muted: #9ca3af;
+  --accent: #2563eb;
+  --accent-soft: #eff6ff;
+  --shadow-soft: 0 6px 18px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 10px 26px rgba(15, 23, 42, 0.1);
+  --radius: 16px;
 }
 
-/* 页面标题 */
-.list .title,
-.posts .title,
+body {
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* 主内容宽度 */
+.wrapper,
+.container,
+.content,
+main {
+  max-width: var(--main-width);
+}
+
+/* =========
+   顶部导航
+========= */
+.navigation {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.navigation a {
+  font-weight: 600;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.navigation a:hover {
+  color: var(--accent);
+}
+
+/* =========
+   页面标题
+========= */
+.title,
 h1 {
   font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  letter-spacing: 0.5px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
 }
 
-/* 文章列表区域 */
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* =========
+   正文段落
+========= */
+.content article p,
+.content p,
+article p {
+  margin-bottom: 1rem;
+}
+
+.content article ul,
+.content article ol,
+.content ul,
+.content ol {
+  margin-bottom: 1.2rem;
+  padding-left: 1.4rem;
+}
+
+.content article li,
+.content li {
+  margin-bottom: 0.45rem;
+}
+
+/* =========
+   文章列表页
+========= */
 ul.posts,
+.posts,
 .posts-list {
   margin-top: 1.5rem;
   padding: 0;
 }
 
-/* 每篇文章项 */
 ul.posts li,
 .posts-list li {
   list-style: none;
   margin-bottom: 1rem;
   padding: 1rem 1.2rem;
-  border-radius: 14px;
-  background: #f8f9fb;
-  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-/* 鼠标悬停 */
 ul.posts li:hover,
 .posts-list li:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  background: #ffffff;
+  background: var(--card-hover-bg);
+  box-shadow: var(--shadow-hover);
 }
 
 /* 日期 */
 ul.posts li span,
 ul.posts li time,
 .posts-list .date {
-  color: #666;
+  color: var(--text-soft);
   font-size: 0.95rem;
-  margin-right: 1.2rem;
   min-width: 110px;
   display: inline-block;
+  margin-right: 1rem;
 }
 
-/* 文章标题链接 */
+/* 标题链接 */
 ul.posts li a,
-.posts-list a {
-  font-weight: 600;
+.posts-list li a {
+  font-weight: 700;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-/* 悬停时标题颜色变化 */
 ul.posts li a:hover,
-.posts-list a:hover {
-  color: #2f6feb;
+.posts-list li a:hover {
+  color: var(--accent);
 }
 
-/* 移动端优化 */
+/* =========
+   单篇文章页
+========= */
+.post .post-title,
+article h1 {
+  margin-bottom: 0.8rem;
+}
+
+.post .post-meta,
+.content .post-meta,
+.post-meta {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin-bottom: 1.4rem;
+}
+
+/* 分类、标签 */
+.tags a,
+.categories a,
+.tag a {
+  display: inline-block;
+  padding: 0.18rem 0.7rem;
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tags a:hover,
+.categories a:hover,
+.tag a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* =========
+   About / Projects / Contact 页面
+========= */
+.page,
+article {
+  font-size: 1.02rem;
+}
+
+article hr,
+.content hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+/* 项目页图片区 */
+article img,
+.content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.2rem auto;
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* 证书类图片稍微规整 */
+img[width] {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========
+   引用块
+========= */
+blockquote {
+  margin: 1.4rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: #f8fafc;
+  color: #374151;
+  border-radius: 0 12px 12px 0;
+}
+
+/* =========
+   行内代码与代码块
+========= */
+code {
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  background: #f3f4f6;
+  font-size: 0.92em;
+}
+
+pre {
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  box-shadow: var(--shadow-soft);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* =========
+   表格
+========= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4rem 0;
+  font-size: 0.96rem;
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+
+th {
+  background: #f9fafb;
+  font-weight: 700;
+}
+
+/* =========
+   页脚
+========= */
+.footer {
+  margin-top: 3rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* =========
+   链接样式
+========= */
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* =========
+   移动端优化
+========= */
 @media (max-width: 768px) {
+  .title,
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
   ul.posts li,
   .posts-list li {
     padding: 0.9rem 1rem;
@@ -79,4 +315,12 @@ ul.posts li a:hover,
     display: block;
     margin-bottom: 0.35rem;
   }
+}
+/* 主页头像 */
+.avatar img {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
