@@ -18,6 +18,7 @@ pagerSize = 6
       unsafe = true
 
 [params]
+math = true
 author = "Jamyoung"
 description = "Jamyoung 的个人博客"
 keywords = "blog,frontend,vue,uniapp,agent"
