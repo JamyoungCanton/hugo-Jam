@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  1.2 古典概型 · Jamyoung&#39;s Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Jamyoung">
+<meta name="description" content="
+  古典概型
+  
+    
+    链接到标题
+  
+
+
+排列数公式：从n个元素中取m个
+
+
+
+  c d）排列与组合关系
+  
+    
+    链接到标题
+  
+
+在组合数学中：
+$$
+A_n^m = C_n^m \cdot m!
+$$
+含义是：
+
+$C_n^m$：从 $n$ 个元素中 选出 $m$ 个，不考虑顺序（组合）。
+$m!$：把选出来的 $m$ 个元素 进行排列的所有可能顺序。
+
+因此：
+
+排列 = 先组合选出元素 × 再对选出的元素进行排列
+
+也就是说，先从 $n$ 个元素中选出 $m$ 个，再对这 $m$ 个元素进行全排列，就得到所有可能的排列数：
+$$
+A_n^m = C_n^m \cdot m!
+$$
+
+
+
+  e）组合数的计算性质
+  
+    
+    链接到标题
+  
+
+
+
+  1. 置球入盒：
+  
+    
+    链接到标题
+  
+
+
+
+
+  例题1.1 生日问题中“生日各不相同”的概率（置球入盒模型）
+  
+    
+    链接到标题
+  
+
+">
+<meta name="keywords" content="blog,frontend,vue,uniapp,agent">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1.2 古典概型">
+  <meta name="twitter:description" content="古典概型链接到标题排列数公式：从n个元素中取m个
+c d）排列与组合关系链接到标题在组合数学中：
+$$ A_n^m = C_n^m \cdot m! $$
+含义是：
+$C_n^m$：从 $n$ 个元素中 选出 $m$ 个，不考虑顺序（组合）。 $m!$：把选出来的 $m$ 个元素 进行排列的所有可能顺序。 因此：
+排列 = 先组合选出元素 × 再对选出的元素进行排列
+也就是说，先从 $n$ 个元素中选出 $m$ 个，再对这 $m$ 个元素进行全排列，就得到所有可能的排列数：
+$$ A_n^m = C_n^m \cdot m! $$
+e）组合数的计算性质链接到标题1. 置球入盒：链接到标题例题1.1 生日问题中“生日各不相同”的概率（置球入盒模型）链接到标题">
+
+<meta property="og:url" content="http://localhost:1313/posts/1.2-%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B/">
+  <meta property="og:site_name" content="Jamyoung&#39;s Blog">
+  <meta property="og:title" content="1.2 古典概型">
+  <meta property="og:description" content="古典概型链接到标题排列数公式：从n个元素中取m个
+c d）排列与组合关系链接到标题在组合数学中：
+$$ A_n^m = C_n^m \cdot m! $$
+含义是：
+$C_n^m$：从 $n$ 个元素中 选出 $m$ 个，不考虑顺序（组合）。 $m!$：把选出来的 $m$ 个元素 进行排列的所有可能顺序。 因此：
+排列 = 先组合选出元素 × 再对选出的元素进行排列
+也就是说，先从 $n$ 个元素中选出 $m$ 个，再对这 $m$ 个元素进行全排列，就得到所有可能的排列数：
+$$ A_n^m = C_n^m \cdot m! $$
+e）组合数的计算性质链接到标题1. 置球入盒：链接到标题例题1.1 生日问题中“生日各不相同”的概率（置球入盒模型）链接到标题">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-10T00:00:00+00:00">
+    <meta property="article:tag" content="概率论">
+    <meta property="article:tag" content="古典概型">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/1.2-%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Jamyoung&#39;s Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item ">
+              <a class="navigation-link " href="/about/" >关于</a>
+              
+            </li>
+          
+            <li class="navigation-item ">
+              <a class="navigation-link " href="/posts/" >博客</a>
+              
+            </li>
+          
+            <li class="navigation-item ">
+              <a class="navigation-link " href="/projects/" >项目</a>
+              
+            </li>
+          
+            <li class="navigation-item ">
+              <a class="navigation-link " href="/contact/" >联系</a>
+              
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/1.2-%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B/">
+              1.2 古典概型
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-03-10T00:00:00Z">
+                2026-03-10
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：2 分钟
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B/">古典概型</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h2 id="古典概型">
+  古典概型
+  <a class="heading-link" href="#%e5%8f%a4%e5%85%b8%e6%a6%82%e5%9e%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p><img src="/images/probability/Pastedimage20260310160207.png" alt="image"></p>
+<p>排列数公式：从n个元素中取m个</p>
+<p><img src="/images/probability/Pastedimage20260310160602.png" alt="image"></p>
+<p><img src="/images/probability/Pastedimage20260310160338.png" alt="image"></p>
+<h3 id="c-d排列与组合关系">
+  c d）排列与组合关系
+  <a class="heading-link" href="#c-d%e6%8e%92%e5%88%97%e4%b8%8e%e7%bb%84%e5%90%88%e5%85%b3%e7%b3%bb">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>在组合数学中：</p>
+<p>$$
+A_n^m = C_n^m \cdot m!
+$$</p>
+<p>含义是：</p>
+<ul>
+<li>$C_n^m$：从 $n$ 个元素中 <strong>选出 $m$ 个</strong>，不考虑顺序（组合）。</li>
+<li>$m!$：把选出来的 $m$ 个元素 <strong>进行排列的所有可能顺序</strong>。</li>
+</ul>
+<p>因此：</p>
+<blockquote>
+<p><strong>排列 = 先组合选出元素 × 再对选出的元素进行排列</strong></p>
+</blockquote>
+<p>也就是说，先从 $n$ 个元素中选出 $m$ 个，再对这 $m$ 个元素进行全排列，就得到所有可能的排列数：</p>
+<p>$$
+A_n^m = C_n^m \cdot m!
+$$</p>
+<p><img src="/images/probability/Pastedimage20260310162504.png" alt="image"></p>
+<p><img src="/images/probability/Pastedimage20260310162402.png" alt="image"></p>
+<h3 id="e组合数的计算性质">
+  e）组合数的计算性质
+  <a class="heading-link" href="#e%e7%bb%84%e5%90%88%e6%95%b0%e7%9a%84%e8%ae%a1%e7%ae%97%e6%80%a7%e8%b4%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p><img src="/images/probability/Pastedimage20260310162654.png" alt="image"></p>
+<h4 id="1-置球入盒">
+  1. 置球入盒：
+  <a class="heading-link" href="#1-%e7%bd%ae%e7%90%83%e5%85%a5%e7%9b%92">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><img src="/images/probability/Pastedimage20260310165402.png" alt="image"></p>
+<hr>
+<h4 id="例题11-生日问题中生日各不相同的概率置球入盒模型">
+  例题1.1 生日问题中“生日各不相同”的概率（置球入盒模型）
+  <a class="heading-link" href="#%e4%be%8b%e9%a2%9811-%e7%94%9f%e6%97%a5%e9%97%ae%e9%a2%98%e4%b8%ad%e7%94%9f%e6%97%a5%e5%90%84%e4%b8%8d%e7%9b%b8%e5%90%8c%e7%9a%84%e6%a6%82%e7%8e%87%e7%bd%ae%e7%90%83%e5%85%a5%e7%9b%92%e6%a8%a1%e5%9e%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><img src="/images/probability/Pastedimage20260310165043.png" alt="image"></p>
+<p>设某班有 60 人，每个人的生日在 365 天中等可能出现。<br>
+要求“至少两人生日相同”的概率，可以用补事件计算：</p>
+<p>$$
+P(\text{至少两人生日相同}) = 1 - P(\text{所有人生日都不同})
+$$</p>
+<p>其中</p>
+<p>$$
+P(\text{所有人生日都不同})=\frac{C_{365}^{60}\cdot 60!}{365^{60}}
+$$</p>
+<p>含义是：</p>
+<ul>
+<li>分母 $365^{60}$：表示 60 个人生日的 <strong>所有可能情况总数</strong>（每人有 365 种选择）。</li>
+<li>分子 $C_{365}^{60}\cdot60!$：表示 <strong>60 人生日全部不同的情况数</strong>。
+<ul>
+<li>$C_{365}^{60}$：从 365 天中选出 60 个不同的日期。</li>
+<li>$60!$：把这 60 个不同日期分配给 60 个不同的人。</li>
+</ul>
+</li>
+</ul>
+<p>因此该式表示 <strong>60 个人生日互不相同的概率</strong>，再用 $1-$ 这个概率，就得到 <strong>至少两人生日相同的概率</strong>。</p>
+<hr>
+<h4 id="例题12-指定盒子恰有-m-个球的概率置球入盒模型">
+  例题1.2 指定盒子恰有 m 个球的概率（置球入盒模型）
+  <a class="heading-link" href="#%e4%be%8b%e9%a2%9812-%e6%8c%87%e5%ae%9a%e7%9b%92%e5%ad%90%e6%81%b0%e6%9c%89-m-%e4%b8%aa%e7%90%83%e7%9a%84%e6%a6%82%e7%8e%87%e7%bd%ae%e7%90%83%e5%85%a5%e7%9b%92%e6%a8%a1%e5%9e%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><img src="/images/probability/Pastedimage20260310171950.png" alt="image"></p>
+<p>设有 n 个球随机放入 n 个盒子，每个球进入任一盒子的概率相同。求某一个 <strong>指定盒子</strong> 恰好有 m 个球的概率。</p>
+<p>总情况数为：</p>
+<p>$$
+n^n
+$$</p>
+<p>因为每个球都有 n 个盒子可选。</p>
+<p>分子表示 <strong>恰好 m 个球进入该指定盒子的情况数</strong>：</p>
+<p>$$
+C_n^m \cdot 1 \cdot (n-1)^{n-m}
+$$</p>
+<p>含义为：</p>
+<ul>
+<li>$C_n^m$：从 n 个球中选出 m 个球进入该指定盒子；</li>
+<li>$1$：这 m 个球只能进入这个指定盒子；</li>
+<li>$(n-1)^{n-m}$：剩余 $n-m$ 个球不能进入该盒子，因此每个球有 $n-1$ 个盒子可选。</li>
+</ul>
+<p>因此概率为：</p>
+<p>$$
+P = \frac{C_n^m (n-1)^{n-m}}{n^n}
+$$</p>
+<p>该式表示 <strong>恰有 m 个球落入指定盒子的概率</strong>。</p>
+<hr>
+<h4 id="例题13-n-个球全部进入同一个盒子的概率">
+  例题1.3 n 个球全部进入同一个盒子的概率
+  <a class="heading-link" href="#%e4%be%8b%e9%a2%9813-n-%e4%b8%aa%e7%90%83%e5%85%a8%e9%83%a8%e8%bf%9b%e5%85%a5%e5%90%8c%e4%b8%80%e4%b8%aa%e7%9b%92%e5%ad%90%e7%9a%84%e6%a6%82%e7%8e%87">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><img src="/images/probability/Pastedimage20260310174723.png" alt="image"></p>
+<h5 id="n-个球全部进入同一个盒子的概率">
+  n 个球全部进入同一个盒子的概率
+  <a class="heading-link" href="#n-%e4%b8%aa%e7%90%83%e5%85%a8%e9%83%a8%e8%bf%9b%e5%85%a5%e5%90%8c%e4%b8%80%e4%b8%aa%e7%9b%92%e5%ad%90%e7%9a%84%e6%a6%82%e7%8e%87">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h5>
+<p>设有 <strong>n 个球</strong> 随机放入 <strong>N 个盒子</strong>，每个球进入任一盒子的概率相同。<br>
+所有可能情况为：</p>
+<p>$$
+N^n
+$$</p>
+<p>因为每个球都有 (N) 个盒子可以选择。</p>
+<p>若要求 <strong>所有 n 个球都进入同一个盒子</strong>，需要先从 (N) 个盒子中选出 <strong>1 个盒子</strong> 来装所有球，其方式数为：</p>
+<p>$$
+C_N^1 = N
+$$</p>
+<p>一旦选定该盒子，所有球都必须进入该盒子，因此只有 <strong>1 种放法</strong>。<br>
+于是满足条件的情况数为 (N)。</p>
+<p>因此概率为：</p>
+<p>$$
+P=\frac{N}{N^n}=\frac{1}{N^{,n-1}}
+$$</p>
+<p>即 <strong>n 个球全部落入同一个盒子的概率为 (1/N^{,n-1})</strong>。</p>
+<hr>
+<h4 id="例题2-竞赛生分班">
+  例题2 竞赛生分班
+  <a class="heading-link" href="#%e4%be%8b%e9%a2%982-%e7%ab%9e%e8%b5%9b%e7%94%9f%e5%88%86%e7%8f%ad">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><img src="/images/probability/Pastedimage20260310175348.png" alt="image"></p>
+<p><img src="/images/probability/Pastedimage20260310175406.png" alt="image"></p>
+<hr>
+<h4 id="例题22-竞赛生分班">
+  例题2.2 竞赛生分班
+  <a class="heading-link" href="#%e4%be%8b%e9%a2%9822-%e7%ab%9e%e8%b5%9b%e7%94%9f%e5%88%86%e7%8f%ad">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>C3 1表示三个竞赛生分到同一个班<br>
+C12 2表示剩下两个位置被普通学生填满<br>
+合起来就是分到三个竞赛生的班级</p>
+<p><img src="/images/probability/Pastedimage20260310180220.png" alt="image"></p>
+<hr>
+<h4 id="例题23">
+  例题2.3
+  <a class="heading-link" href="#%e4%be%8b%e9%a2%9823">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><img src="/images/probability/Pastedimage20260310180944.png" alt="image"></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     Jamyoung 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
