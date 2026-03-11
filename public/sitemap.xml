@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/1.2-%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B/</loc>
+    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2026-03-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -17,16 +20,10 @@
     <loc>http://localhost:1313/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</loc>
     <lastmod>2026-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/1.2-%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B/</loc>
-    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B/</loc>
     <lastmod>2026-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2026-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2026-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/1.1-%E4%BA%8B%E4%BB%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E8%BF%90%E7%AE%97/</loc>
@@ -61,6 +58,8 @@
   </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>1970-01-01T08:33:46+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/openclaw-deploy/</loc>
   </url><url>
     <loc>http://localhost:1313/authors/</loc>
   </url><url>
