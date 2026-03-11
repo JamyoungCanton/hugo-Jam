@@ -40,11 +40,12 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 #### 6.选择大模型服务商
 建议选择Kimi，会赠送新用户15元API额度
-![](/images/openclaw/8.png)
+
+![](/images/openclaw/7.png)
 
 #### 7.点击复制后确定
 https://platform.moonshot.cn/console/account
-![](/images/openclaw/7.png)
+![](/images/openclaw/8.png)
 
 #### 8.密钥类型选择Kimi API key (.cn)
 ![](/images/openclaw/9.png)
