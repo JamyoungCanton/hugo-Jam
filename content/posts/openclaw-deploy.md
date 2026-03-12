@@ -1,10 +1,10 @@
 ---
-title: "OpenClaw + 飞书机器人部署教程"
+title: "OpenClaw + 飞书部署"
 date: 2026-03-11
 draft: false
-tags: ["OpenClaw", "AI Agent", "飞书机器人"]
+tags: ["OpenClaw", "AI Agent"]
 categories: ["项目文档"]
-description: "OpenClaw 本地部署与飞书机器人接入完整教程：包含 Node.js、Git 安装、模型配置与通讯渠道配置"
+description: "OpenClaw 本地部署与飞书机器人接入：包含 Node.js、Git 安装、模型配置与通讯渠道配置"
 ---
 ## 一、前置：环境配置
 
@@ -102,63 +102,63 @@ click创建版本
 ![](/images/openclaw/25.png)
 
 ### 2.连接openclaw
-#### 1.回到power shell输入:"openclaw config"
+#### 2.1回到power shell输入:"openclaw config"
 ![](/images/openclaw/26.png)
 
-#### 2.选择本机运行
+#### 2.2选择本机运行
 ![](/images/openclaw/27.png)
 
-#### 3.选择Channels配置通讯渠道
+#### 2.3选择Channels配置通讯渠道
 ![](/images/openclaw/28.png)
 
-#### 4.选择Configure/link
+#### 2.4选择Configure/link
 ![](/images/openclaw/29.png)
 
-#### 5.找到飞书后回车
+#### 2.5找到飞书后回车
 ![](/images/openclaw/30.png)
 
-#### 6.选择通过npm安装插件
+#### 2.6选择通过npm安装插件
 ![](/images/openclaw/31.png)
 
-#### 7.安装完成后选择输入app secret
+#### 2.7安装完成后选择输入app secret
 ![](/images/openclaw/32.png)
 
-#### 8.在开发者后台找到应用凭证->App Secret和AppID后粘贴到powershell
+#### 2.8在开发者后台找到应用凭证->App Secret和AppID后粘贴到powershell
 (注意右键是粘贴键)
 ![](/images/openclaw/33.png)
 ![](/images/openclaw/34.png)
 ![](/images/openclaw/35.png)
 
-#### 9.通讯模式选择实时通讯
+#### 2.9通讯模式选择实时通讯
 ![](/images/openclaw/36.png)
 
-#### 10.选择飞书->通讯政策选择所有群聊但要@机器人
+#### 2.10选择飞书->通讯政策选择所有群聊但要@机器人
 ![](/images/openclaw/37.png)
 
-#### 11.选择Finished
+#### 2.11选择Finished
 ![](/images/openclaw/38.png)
 
-#### 12.是否马上配置私聊房策略 选yes策略选open任何人都可私聊
+#### 2.12是否马上配置私聊房策略 选yes策略选open任何人都可私聊
 ![](/images/openclaw/39.png)
 ![](/images/openclaw/40.png)
 
-#### 13.最后完成选继续
+#### 2.13最后完成选继续
 ![](/images/openclaw/41.png)
 ![](/images/openclaw/42.png)
 
-#### 14.飞书->事件与回调->订阅方式->长连接->保存
+#### 2.14飞书->事件与回调->订阅方式->长连接->保存
 ![](/images/openclaw/43.png)
 ![](/images/openclaw/44.png)
 
-#### 15.添加事件->搜索接收消息->勾选->添加
+#### 2.15添加事件->搜索接收消息->勾选->添加
 ![](/images/openclaw/45.png)
 ![](/images/openclaw/46.png)
 
-#### 16.权限管理->开通权限->搜索通讯录->勾选获取通讯录信息->开通
+#### 2.16权限管理->开通权限->搜索通讯录->勾选获取通讯录信息->开通
 ![](/images/openclaw/47.png)
 ![](/images/openclaw/48.png)
 
-#### 18.再次发布版本以保存配置
+#### 2.17再次发布版本以保存配置
 创建版本->保存->确认发布
 ![](/images/openclaw/49.png)
 ![](/images/openclaw/50.png)
@@ -167,7 +167,7 @@ click创建版本
 ![](/images/openclaw/52.png)
 
 ### 3.测试
-#### 1.在手机端找到自建应用入口->打开应用->对话->成功！*注：三月更新后飞书openclaw回复不稳定
+#### 3.1在手机端找到自建应用入口->打开应用->对话->成功！*注：三月更新后飞书openclaw回复不稳定
 ![](/images/openclaw/51.png)
 ![](/images/openclaw/53.jpg)
 
