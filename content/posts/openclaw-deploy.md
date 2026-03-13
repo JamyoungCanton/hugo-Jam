@@ -12,13 +12,13 @@ description: "OpenClaw 本地部署与飞书机器人接入：包含 Node.js、G
 从链接下载安装包或在目标文件夹终端输入：
 winget install --id OpenJS.NodeJS.LTS -e
 https://nodejs.org/en/download
-![](/images/openclaw/1.png)
+![](/images/openclaw/55.png)
 
 ### 2.**安装git**
 Git在链接下载安装包或在目标文件夹终端输入：
 winget install --id Git.Git -e --source winget
 https://git-scm.com/install/windows
-![](/images/openclaw/2.png)
+![](/images/openclaw/54.png)
 
 ## 二、clawbot安装
 #### 1.**不挂梯方法**：
@@ -80,7 +80,7 @@ https://platform.moonshot.cn/console/account
 在安装日志中找到token并+/复制到链接后即可访问
 ![](/images/openclaw/19.png)
 
-#### 17.与ai对话有回答表名部署成功！
+#### 17.与ai对话有回答表明部署成功！
 ![](/images/openclaw/20.png)
 
 ## 三、openclaw通讯软件的接入

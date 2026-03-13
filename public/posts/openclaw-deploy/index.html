@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54277&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
-  OpenClaw &#43; 飞书机器人部署教程 · Jamyoung&#39;s Blog
+  OpenClaw &#43; 飞书部署 · Jamyoung&#39;s Blog
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +13,19 @@
 
 
 <meta name="author" content="Jamyoung">
-<meta name="description" content="OpenClaw 本地部署与飞书机器人接入完整教程：包含 Node.js、Git 安装、模型配置与通讯渠道配置">
+<meta name="description" content="OpenClaw 本地部署与飞书机器人接入：包含 Node.js、Git 安装、模型配置与通讯渠道配置">
 <meta name="keywords" content="blog,frontend,vue,uniapp,agent">
 
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OpenClaw &#43; 飞书机器人部署教程">
-  <meta name="twitter:description" content="OpenClaw 本地部署与飞书机器人接入完整教程：包含 Node.js、Git 安装、模型配置与通讯渠道配置">
+  <meta name="twitter:title" content="OpenClaw &#43; 飞书部署">
+  <meta name="twitter:description" content="OpenClaw 本地部署与飞书机器人接入：包含 Node.js、Git 安装、模型配置与通讯渠道配置">
 
-<meta property="og:url" content="http://localhost:54277/posts/openclaw-deploy/">
+<meta property="og:url" content="http://localhost:1313/posts/openclaw-deploy/">
   <meta property="og:site_name" content="Jamyoung&#39;s Blog">
-  <meta property="og:title" content="OpenClaw &#43; 飞书机器人部署教程">
-  <meta property="og:description" content="OpenClaw 本地部署与飞书机器人接入完整教程：包含 Node.js、Git 安装、模型配置与通讯渠道配置">
+  <meta property="og:title" content="OpenClaw &#43; 飞书部署">
+  <meta property="og:description" content="OpenClaw 本地部署与飞书机器人接入：包含 Node.js、Git 安装、模型配置与通讯渠道配置">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -33,12 +33,11 @@
     <meta property="article:modified_time" content="2026-03-11T00:00:00+00:00">
     <meta property="article:tag" content="OpenClaw">
     <meta property="article:tag" content="AI Agent">
-    <meta property="article:tag" content="飞书机器人">
 
 
 
 
-<link rel="canonical" href="http://localhost:54277/posts/openclaw-deploy/">
+<link rel="canonical" href="http://localhost:1313/posts/openclaw-deploy/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -112,7 +111,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:54277/">
+    <a class="navigation-title" href="http://localhost:1313/">
       Jamyoung&#39;s Blog
     </a>
     
@@ -159,8 +158,8 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:54277/posts/openclaw-deploy/">
-              OpenClaw &#43; 飞书机器人部署教程
+            <a class="title-link" href="http://localhost:1313/posts/openclaw-deploy/">
+              OpenClaw &#43; 飞书部署
             </a>
           </h1>
         </div>
@@ -190,10 +189,6 @@
       <span class="separator">•</span>
     <span class="tag">
       <a href="/tags/ai-agent/">AI Agent</a>
-    </span>
-      <span class="separator">•</span>
-    <span class="tag">
-      <a href="/tags/%E9%A3%9E%E4%B9%A6%E6%9C%BA%E5%99%A8%E4%BA%BA/">飞书机器人</a>
     </span></div>
 
         </div>
@@ -221,7 +216,7 @@
 <p>从链接下载安装包或在目标文件夹终端输入：
 winget install &ndash;id OpenJS.NodeJS.LTS -e
 <a href="https://nodejs.org/en/download"  class="external-link" target="_blank" rel="noopener">https://nodejs.org/en/download</a>
-<img src="/images/openclaw/1.png" alt=""></p>
+<img src="/images/openclaw/55.png" alt=""></p>
 <h3 id="2安装git">
   2.<strong>安装git</strong>
   <a class="heading-link" href="#2%e5%ae%89%e8%a3%85git">
@@ -232,7 +227,7 @@ winget install &ndash;id OpenJS.NodeJS.LTS -e
 <p>Git在链接下载安装包或在目标文件夹终端输入：
 winget install &ndash;id Git.Git -e &ndash;source winget
 <a href="https://git-scm.com/install/windows"  class="external-link" target="_blank" rel="noopener">https://git-scm.com/install/windows</a>
-<img src="/images/openclaw/2.png" alt=""></p>
+<img src="/images/openclaw/54.png" alt=""></p>
 <h2 id="二clawbot安装">
   二、clawbot安装
   <a class="heading-link" href="#%e4%ba%8cclawbot%e5%ae%89%e8%a3%85">
@@ -370,9 +365,9 @@ winget install &ndash;id Git.Git -e &ndash;source winget
 <img src="/images/openclaw/18.png" alt=""></p>
 <p>在安装日志中找到token并+/复制到链接后即可访问
 <img src="/images/openclaw/19.png" alt=""></p>
-<h4 id="17与ai对话有回答表名部署成功">
-  17.与ai对话有回答表名部署成功！
-  <a class="heading-link" href="#17%e4%b8%8eai%e5%af%b9%e8%af%9d%e6%9c%89%e5%9b%9e%e7%ad%94%e8%a1%a8%e5%90%8d%e9%83%a8%e7%bd%b2%e6%88%90%e5%8a%9f">
+<h4 id="17与ai对话有回答表明部署成功">
+  17.与ai对话有回答表明部署成功！
+  <a class="heading-link" href="#17%e4%b8%8eai%e5%af%b9%e8%af%9d%e6%9c%89%e5%9b%9e%e7%ad%94%e8%a1%a8%e6%98%8e%e9%83%a8%e7%bd%b2%e6%88%90%e5%8a%9f">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -410,65 +405,65 @@ winget install &ndash;id Git.Git -e &ndash;source winget
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
-<h4 id="1回到power-shell输入openclaw-config">
-  1.回到power shell输入:&ldquo;openclaw config&rdquo;
-  <a class="heading-link" href="#1%e5%9b%9e%e5%88%b0power-shell%e8%be%93%e5%85%a5openclaw-config">
+<h4 id="21回到power-shell输入openclaw-config">
+  2.1回到power shell输入:&ldquo;openclaw config&rdquo;
+  <a class="heading-link" href="#21%e5%9b%9e%e5%88%b0power-shell%e8%be%93%e5%85%a5openclaw-config">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/26.png" alt=""></p>
-<h4 id="2选择本机运行">
-  2.选择本机运行
-  <a class="heading-link" href="#2%e9%80%89%e6%8b%a9%e6%9c%ac%e6%9c%ba%e8%bf%90%e8%a1%8c">
+<h4 id="22选择本机运行">
+  2.2选择本机运行
+  <a class="heading-link" href="#22%e9%80%89%e6%8b%a9%e6%9c%ac%e6%9c%ba%e8%bf%90%e8%a1%8c">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/27.png" alt=""></p>
-<h4 id="3选择channels配置通讯渠道">
-  3.选择Channels配置通讯渠道
-  <a class="heading-link" href="#3%e9%80%89%e6%8b%a9channels%e9%85%8d%e7%bd%ae%e9%80%9a%e8%ae%af%e6%b8%a0%e9%81%93">
+<h4 id="23选择channels配置通讯渠道">
+  2.3选择Channels配置通讯渠道
+  <a class="heading-link" href="#23%e9%80%89%e6%8b%a9channels%e9%85%8d%e7%bd%ae%e9%80%9a%e8%ae%af%e6%b8%a0%e9%81%93">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/28.png" alt=""></p>
-<h4 id="4选择configurelink">
-  4.选择Configure/link
-  <a class="heading-link" href="#4%e9%80%89%e6%8b%a9configurelink">
+<h4 id="24选择configurelink">
+  2.4选择Configure/link
+  <a class="heading-link" href="#24%e9%80%89%e6%8b%a9configurelink">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/29.png" alt=""></p>
-<h4 id="5找到飞书后回车">
-  5.找到飞书后回车
-  <a class="heading-link" href="#5%e6%89%be%e5%88%b0%e9%a3%9e%e4%b9%a6%e5%90%8e%e5%9b%9e%e8%bd%a6">
+<h4 id="25找到飞书后回车">
+  2.5找到飞书后回车
+  <a class="heading-link" href="#25%e6%89%be%e5%88%b0%e9%a3%9e%e4%b9%a6%e5%90%8e%e5%9b%9e%e8%bd%a6">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/30.png" alt=""></p>
-<h4 id="6选择通过npm安装插件">
-  6.选择通过npm安装插件
-  <a class="heading-link" href="#6%e9%80%89%e6%8b%a9%e9%80%9a%e8%bf%87npm%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6">
+<h4 id="26选择通过npm安装插件">
+  2.6选择通过npm安装插件
+  <a class="heading-link" href="#26%e9%80%89%e6%8b%a9%e9%80%9a%e8%bf%87npm%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/31.png" alt=""></p>
-<h4 id="7安装完成后选择输入app-secret">
-  7.安装完成后选择输入app secret
-  <a class="heading-link" href="#7%e5%ae%89%e8%a3%85%e5%ae%8c%e6%88%90%e5%90%8e%e9%80%89%e6%8b%a9%e8%be%93%e5%85%a5app-secret">
+<h4 id="27安装完成后选择输入app-secret">
+  2.7安装完成后选择输入app secret
+  <a class="heading-link" href="#27%e5%ae%89%e8%a3%85%e5%ae%8c%e6%88%90%e5%90%8e%e9%80%89%e6%8b%a9%e8%be%93%e5%85%a5app-secret">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/32.png" alt=""></p>
-<h4 id="8在开发者后台找到应用凭证-app-secret和appid后粘贴到powershell">
-  8.在开发者后台找到应用凭证-&gt;App Secret和AppID后粘贴到powershell
-  <a class="heading-link" href="#8%e5%9c%a8%e5%bc%80%e5%8f%91%e8%80%85%e5%90%8e%e5%8f%b0%e6%89%be%e5%88%b0%e5%ba%94%e7%94%a8%e5%87%ad%e8%af%81-app-secret%e5%92%8cappid%e5%90%8e%e7%b2%98%e8%b4%b4%e5%88%b0powershell">
+<h4 id="28在开发者后台找到应用凭证-app-secret和appid后粘贴到powershell">
+  2.8在开发者后台找到应用凭证-&gt;App Secret和AppID后粘贴到powershell
+  <a class="heading-link" href="#28%e5%9c%a8%e5%bc%80%e5%8f%91%e8%80%85%e5%90%8e%e5%8f%b0%e6%89%be%e5%88%b0%e5%ba%94%e7%94%a8%e5%87%ad%e8%af%81-app-secret%e5%92%8cappid%e5%90%8e%e7%b2%98%e8%b4%b4%e5%88%b0powershell">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -477,78 +472,78 @@ winget install &ndash;id Git.Git -e &ndash;source winget
 <img src="/images/openclaw/33.png" alt="">
 <img src="/images/openclaw/34.png" alt="">
 <img src="/images/openclaw/35.png" alt=""></p>
-<h4 id="9通讯模式选择实时通讯">
-  9.通讯模式选择实时通讯
-  <a class="heading-link" href="#9%e9%80%9a%e8%ae%af%e6%a8%a1%e5%bc%8f%e9%80%89%e6%8b%a9%e5%ae%9e%e6%97%b6%e9%80%9a%e8%ae%af">
+<h4 id="29通讯模式选择实时通讯">
+  2.9通讯模式选择实时通讯
+  <a class="heading-link" href="#29%e9%80%9a%e8%ae%af%e6%a8%a1%e5%bc%8f%e9%80%89%e6%8b%a9%e5%ae%9e%e6%97%b6%e9%80%9a%e8%ae%af">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/36.png" alt=""></p>
-<h4 id="10选择飞书-通讯政策选择所有群聊但要机器人">
-  10.选择飞书-&gt;通讯政策选择所有群聊但要@机器人
-  <a class="heading-link" href="#10%e9%80%89%e6%8b%a9%e9%a3%9e%e4%b9%a6-%e9%80%9a%e8%ae%af%e6%94%bf%e7%ad%96%e9%80%89%e6%8b%a9%e6%89%80%e6%9c%89%e7%be%a4%e8%81%8a%e4%bd%86%e8%a6%81%e6%9c%ba%e5%99%a8%e4%ba%ba">
+<h4 id="210选择飞书-通讯政策选择所有群聊但要机器人">
+  2.10选择飞书-&gt;通讯政策选择所有群聊但要@机器人
+  <a class="heading-link" href="#210%e9%80%89%e6%8b%a9%e9%a3%9e%e4%b9%a6-%e9%80%9a%e8%ae%af%e6%94%bf%e7%ad%96%e9%80%89%e6%8b%a9%e6%89%80%e6%9c%89%e7%be%a4%e8%81%8a%e4%bd%86%e8%a6%81%e6%9c%ba%e5%99%a8%e4%ba%ba">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/37.png" alt=""></p>
-<h4 id="11选择finished">
-  11.选择Finished
-  <a class="heading-link" href="#11%e9%80%89%e6%8b%a9finished">
+<h4 id="211选择finished">
+  2.11选择Finished
+  <a class="heading-link" href="#211%e9%80%89%e6%8b%a9finished">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/38.png" alt=""></p>
-<h4 id="12是否马上配置私聊房策略-选yes策略选open任何人都可私聊">
-  12.是否马上配置私聊房策略 选yes策略选open任何人都可私聊
-  <a class="heading-link" href="#12%e6%98%af%e5%90%a6%e9%a9%ac%e4%b8%8a%e9%85%8d%e7%bd%ae%e7%a7%81%e8%81%8a%e6%88%bf%e7%ad%96%e7%95%a5-%e9%80%89yes%e7%ad%96%e7%95%a5%e9%80%89open%e4%bb%bb%e4%bd%95%e4%ba%ba%e9%83%bd%e5%8f%af%e7%a7%81%e8%81%8a">
+<h4 id="212是否马上配置私聊房策略-选yes策略选open任何人都可私聊">
+  2.12是否马上配置私聊房策略 选yes策略选open任何人都可私聊
+  <a class="heading-link" href="#212%e6%98%af%e5%90%a6%e9%a9%ac%e4%b8%8a%e9%85%8d%e7%bd%ae%e7%a7%81%e8%81%8a%e6%88%bf%e7%ad%96%e7%95%a5-%e9%80%89yes%e7%ad%96%e7%95%a5%e9%80%89open%e4%bb%bb%e4%bd%95%e4%ba%ba%e9%83%bd%e5%8f%af%e7%a7%81%e8%81%8a">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/39.png" alt="">
 <img src="/images/openclaw/40.png" alt=""></p>
-<h4 id="13最后完成选继续">
-  13.最后完成选继续
-  <a class="heading-link" href="#13%e6%9c%80%e5%90%8e%e5%ae%8c%e6%88%90%e9%80%89%e7%bb%a7%e7%bb%ad">
+<h4 id="213最后完成选继续">
+  2.13最后完成选继续
+  <a class="heading-link" href="#213%e6%9c%80%e5%90%8e%e5%ae%8c%e6%88%90%e9%80%89%e7%bb%a7%e7%bb%ad">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/41.png" alt="">
 <img src="/images/openclaw/42.png" alt=""></p>
-<h4 id="14飞书-事件与回调-订阅方式-长连接-保存">
-  14.飞书-&gt;事件与回调-&gt;订阅方式-&gt;长连接-&gt;保存
-  <a class="heading-link" href="#14%e9%a3%9e%e4%b9%a6-%e4%ba%8b%e4%bb%b6%e4%b8%8e%e5%9b%9e%e8%b0%83-%e8%ae%a2%e9%98%85%e6%96%b9%e5%bc%8f-%e9%95%bf%e8%bf%9e%e6%8e%a5-%e4%bf%9d%e5%ad%98">
+<h4 id="214飞书-事件与回调-订阅方式-长连接-保存">
+  2.14飞书-&gt;事件与回调-&gt;订阅方式-&gt;长连接-&gt;保存
+  <a class="heading-link" href="#214%e9%a3%9e%e4%b9%a6-%e4%ba%8b%e4%bb%b6%e4%b8%8e%e5%9b%9e%e8%b0%83-%e8%ae%a2%e9%98%85%e6%96%b9%e5%bc%8f-%e9%95%bf%e8%bf%9e%e6%8e%a5-%e4%bf%9d%e5%ad%98">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/43.png" alt="">
 <img src="/images/openclaw/44.png" alt=""></p>
-<h4 id="15添加事件-搜索接收消息-勾选-添加">
-  15.添加事件-&gt;搜索接收消息-&gt;勾选-&gt;添加
-  <a class="heading-link" href="#15%e6%b7%bb%e5%8a%a0%e4%ba%8b%e4%bb%b6-%e6%90%9c%e7%b4%a2%e6%8e%a5%e6%94%b6%e6%b6%88%e6%81%af-%e5%8b%be%e9%80%89-%e6%b7%bb%e5%8a%a0">
+<h4 id="215添加事件-搜索接收消息-勾选-添加">
+  2.15添加事件-&gt;搜索接收消息-&gt;勾选-&gt;添加
+  <a class="heading-link" href="#215%e6%b7%bb%e5%8a%a0%e4%ba%8b%e4%bb%b6-%e6%90%9c%e7%b4%a2%e6%8e%a5%e6%94%b6%e6%b6%88%e6%81%af-%e5%8b%be%e9%80%89-%e6%b7%bb%e5%8a%a0">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/45.png" alt="">
 <img src="/images/openclaw/46.png" alt=""></p>
-<h4 id="16权限管理-开通权限-搜索通讯录-勾选获取通讯录信息-开通">
-  16.权限管理-&gt;开通权限-&gt;搜索通讯录-&gt;勾选获取通讯录信息-&gt;开通
-  <a class="heading-link" href="#16%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86-%e5%bc%80%e9%80%9a%e6%9d%83%e9%99%90-%e6%90%9c%e7%b4%a2%e9%80%9a%e8%ae%af%e5%bd%95-%e5%8b%be%e9%80%89%e8%8e%b7%e5%8f%96%e9%80%9a%e8%ae%af%e5%bd%95%e4%bf%a1%e6%81%af-%e5%bc%80%e9%80%9a">
+<h4 id="216权限管理-开通权限-搜索通讯录-勾选获取通讯录信息-开通">
+  2.16权限管理-&gt;开通权限-&gt;搜索通讯录-&gt;勾选获取通讯录信息-&gt;开通
+  <a class="heading-link" href="#216%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86-%e5%bc%80%e9%80%9a%e6%9d%83%e9%99%90-%e6%90%9c%e7%b4%a2%e9%80%9a%e8%ae%af%e5%bd%95-%e5%8b%be%e9%80%89%e8%8e%b7%e5%8f%96%e9%80%9a%e8%ae%af%e5%bd%95%e4%bf%a1%e6%81%af-%e5%bc%80%e9%80%9a">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
 <p><img src="/images/openclaw/47.png" alt="">
 <img src="/images/openclaw/48.png" alt=""></p>
-<h4 id="18再次发布版本以保存配置">
-  18.再次发布版本以保存配置
-  <a class="heading-link" href="#18%e5%86%8d%e6%ac%a1%e5%8f%91%e5%b8%83%e7%89%88%e6%9c%ac%e4%bb%a5%e4%bf%9d%e5%ad%98%e9%85%8d%e7%bd%ae">
+<h4 id="217再次发布版本以保存配置">
+  2.17再次发布版本以保存配置
+  <a class="heading-link" href="#217%e5%86%8d%e6%ac%a1%e5%8f%91%e5%b8%83%e7%89%88%e6%9c%ac%e4%bb%a5%e4%bf%9d%e5%ad%98%e9%85%8d%e7%bd%ae">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -565,9 +560,9 @@ winget install &ndash;id Git.Git -e &ndash;source winget
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
-<h4 id="1在手机端找到自建应用入口-打开应用-对话-成功注三月更新后飞书openclaw回复不稳定">
-  1.在手机端找到自建应用入口-&gt;打开应用-&gt;对话-&gt;成功！*注：三月更新后飞书openclaw回复不稳定
-  <a class="heading-link" href="#1%e5%9c%a8%e6%89%8b%e6%9c%ba%e7%ab%af%e6%89%be%e5%88%b0%e8%87%aa%e5%bb%ba%e5%ba%94%e7%94%a8%e5%85%a5%e5%8f%a3-%e6%89%93%e5%bc%80%e5%ba%94%e7%94%a8-%e5%af%b9%e8%af%9d-%e6%88%90%e5%8a%9f%e6%b3%a8%e4%b8%89%e6%9c%88%e6%9b%b4%e6%96%b0%e5%90%8e%e9%a3%9e%e4%b9%a6openclaw%e5%9b%9e%e5%a4%8d%e4%b8%8d%e7%a8%b3%e5%ae%9a">
+<h4 id="31在手机端找到自建应用入口-打开应用-对话-成功注三月更新后飞书openclaw回复不稳定">
+  3.1在手机端找到自建应用入口-&gt;打开应用-&gt;对话-&gt;成功！*注：三月更新后飞书openclaw回复不稳定
+  <a class="heading-link" href="#31%e5%9c%a8%e6%89%8b%e6%9c%ba%e7%ab%af%e6%89%be%e5%88%b0%e8%87%aa%e5%bb%ba%e5%ba%94%e7%94%a8%e5%85%a5%e5%8f%a3-%e6%89%93%e5%bc%80%e5%ba%94%e7%94%a8-%e5%af%b9%e8%af%9d-%e6%88%90%e5%8a%9f%e6%b3%a8%e4%b8%89%e6%9c%88%e6%9b%b4%e6%96%b0%e5%90%8e%e9%a3%9e%e4%b9%a6openclaw%e5%9b%9e%e5%a4%8d%e4%b8%8d%e7%a8%b3%e5%ae%9a">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
